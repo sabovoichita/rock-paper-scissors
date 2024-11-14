@@ -28,10 +28,22 @@ function getRoundResults(userOption) {
     return `Computer wins! ${computerResult} beats ${userOption}`;
   }
 }
+
+const playerScoreSpanElement = document.getElementById("player-score");
+const computerScoreSpanElement = document.getElementById("computer-score");
+const roundResultsMsg = document.getElementById("results-msg");
+
+function showResults(userOption) {
+  roundResultsMsg.innerText = getRoundResults(userOption);
+  playerScoreSpanElement.innerText = playerScore;
+  computerScoreSpanElement.innerText = computerScore;
+}
+showResults("Rock");
+
 // console.log(getRoundResults("Rock"));
 // console.log(getRoundResults("Paper"));
-console.log(getRoundResults("Scissors"));
-console.log("Player Score: ", playerScore, "Computer Score:", computerScore);
+// console.log(getRoundResults("Scissors"));
+// console.log("Player Score: ", playerScore, "Computer Score:", computerScore);
 
 // console.log(hasPlayerWonTheRound("Rock", "Scissors"));
 // console.log(hasPlayerWonTheRound("Scissors", "Paper"));
